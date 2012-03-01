@@ -2,6 +2,9 @@
 /**
  * Represents a git branch
  *
+ * @property-read AGitCommit[] $commits
+ * @property-read AGitCommit $lastCommit
+ *
  * @author Charles Pick
  * @package packages.git
  */

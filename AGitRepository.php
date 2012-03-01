@@ -2,6 +2,11 @@
 /**
  * Represents a git repository for interaction with git.
  *
+ * @property string $path
+ * @property-read AGitBranch $activeBranch
+ * @property-read AGitBranch[] $branches
+ * @property-read AGitRemote[] $remotes
+ *
  * @author Charles Pick
  * @package packages.git
  */

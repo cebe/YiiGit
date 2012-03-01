@@ -51,7 +51,7 @@ class AGitCommit extends CComponent {
 	public $branch;
 	/**
 	 * Holds an array of files included in this commit
-	 * @var array
+	 * @var AGitFile[]
 	 */
 	protected $_files;
 	/**
@@ -93,7 +93,7 @@ class AGitCommit extends CComponent {
 		if ($this->_files === null) {
 			$command = 'show --pretty="format:" --name-only '.$this->hash;
 			foreach(explode("\n",$this->branch->repository->run($command)) as $line) {
-				$this->_files[] = trim($line);
+				$this->_files[] = new AGitFile($this->branch, trim($line));
 			}
 		}
 		return $this->_files;
